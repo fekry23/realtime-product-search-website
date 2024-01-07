@@ -10,6 +10,7 @@ class ProductService {
     };
   }
 
+  
   validateSearchParams(search) {
     if (typeof search !== 'string' || search.trim() === '') {
       throw new Error('Search parameter is required and must be a non-empty string.');
@@ -23,14 +24,16 @@ class ProductService {
         method: 'GET',
         url: `${this.baseURL}/search`,
         params: {
-          q: toString(search),
+          q: String(search),
           country: 'my',
           language: 'en',
           limit: '30',
           page: page,
           sort_by: sort_by,
           min_price: min_price,
-          
+          max_price: max_price,
+          on_sale: on_sale,
+          min_rating: min_rating
         },
         headers: this.headers
       };

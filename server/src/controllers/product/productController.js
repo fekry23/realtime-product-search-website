@@ -1,8 +1,7 @@
-const ProductService = require("../../services/productService");
+const ProductService = require("../../services/product/productService");
 const rapidApiKey = process.env.RAPIDAPI_KEY;
 const productService = new ProductService(rapidApiKey);
 
-// Method 2
 class productController {
 
   static async searchProduct(req, res) {
@@ -12,7 +11,7 @@ class productController {
       const { search, page, sort_by, min_price, max_price, on_sale, min_rating } = req.query;
 
       // Call the productService.searchProduct method
-      const productData = await productService.searchProduct({
+      const productData = await productService.searchProduct(
         search,
         page,
         sort_by,
@@ -20,7 +19,7 @@ class productController {
         max_price,
         on_sale,
         min_rating,
-      });
+      );
 
       // Respond with the productData
       res.json(productData);
