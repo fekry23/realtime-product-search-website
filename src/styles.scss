@@ -1,1 +1,154 @@
-/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@fontsource/blinker";
+@import "../node_modules/css-star-rating/scss/star-rating";
+
+// VARIABLES
+:root {
+  --color-primary: #C4DFDF;
+  --color-secondary: #D2E9E9;
+  --color-tertiary: #E3F4F4;
+  --color-background: #F8F6F4;  
+  --color-black: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  box-sizing: border-box;
+  font-family: 'Blinker', sans-serif;
+}
+
+html, body { 
+  padding: 0; 
+  margin: 0;
+}
+
+// WRAPPER
+.wrapper {
+  width: 100%;
+  max-width: 1200px * 2;
+  margin: 0 auto;
+  padding: 0px 20px;
+}
+
+/* BUTTTON */
+.button-main {
+  appearance: button;
+  background-color: #000;
+  background-image: none;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: #fff 4px 4px 0 0,#000 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0 5px 10px 0;
+  overflow: visible;
+  padding: 12px 40px;
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  @media (min-width: 768px) {
+    padding: 12px 50px;
+  }  
+
+  &:focus {
+    text-decoration: none;    
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:active {
+    box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+    outline: 0;
+  }
+
+  &:not([disabled]):active {
+    box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+    transform: translate(2px, 2px);
+  }
+}
+
+/* CSS */
+.button-second {
+  appearance: none;
+  background-color: #FAFBFC;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 25px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-sizing: border-box;
+  color: #24292E;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  padding: 6px 16px;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: break-word;
+
+  &:hover {
+    background-color: #F3F4F6;
+    text-decoration: none;
+    transition-duration: 0.1s;
+  }
+
+  &:disabled {
+    background-color: #FAFBFC;
+    border-color: rgba(27, 31, 35, 0.15);
+    color: #959DA5;
+    cursor: default;
+  }
+
+  &:active {
+    background-color: #EDEFF2;
+    box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+    transition: none 0s;
+  }
+
+  &:focus {
+    outline: 1px transparent;
+  }
+
+  &:before {
+    display: none;
+  }
+
+  &:-webkit-details-marker {
+    display: none;
+  }
+}
+
+/* Override Colors by using style rules */
+// https://github.com/BioPhoton/angular-star-rating/wiki/Customizing-Styles
+.rating.color-negative,
+.rating.color-ok,
+.rating.color-positive,
+.rating.color-default {
+  .star-container .star {
+    svg,
+    i {
+      fill: var(--color-primary) !important;
+      color: var(--color-primary) !important;
+    }
+  }
+}

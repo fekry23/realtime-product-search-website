@@ -1,0 +1,38 @@
+.header {
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    cursor: pointer;
+    img {
+      width: 100px;
+    }
+  }
+
+  &__menu {
+    .items {
+      display: flex;
+      gap: 10px;
+      list-style: none;
+
+      .item {
+        cursor: pointer;
+
+        a {
+          text-decoration: none;
+          color: var(--color-black);
+          padding: 10px;
+          border-radius: 5px;
+          transition: all 0.3s ease-in-out;
+        
+          &:hover {
+            color: var(--color-primary);
+          }
+        }
+      }
+    }
+  }
+}

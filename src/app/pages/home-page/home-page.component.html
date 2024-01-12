@@ -1,0 +1,53 @@
+<div class="home">
+
+  <!-- Header -->
+  <div class="home__header">
+     <div class="wrapper">
+       <div class="home__header-content">
+         <h1 class="heading">Elevate Your Shopping Experience with Real-Time Product Discovery!</h1>
+         <p class="desc">Discover a new world of products at your fingertips. Our platform brings you the latest trends and unique finds in real-time, transforming the way you shop online.</p>
+       </div>
+       <button class="button-main">Get Started</button>
+     </div>
+  </div>
+
+  <!-- Logos -->
+  <div class="home__logos wrapper">
+    <img src="assets/images/logos/uniqlo-logo.png" alt="Uniqlo" class="logo">
+    <img src="assets/images/logos/hm-logo.png" alt="H&M" class="logo">
+    <img src="assets/images/logos/new-balance-logo.png" alt="New Balance" class="logo">
+    <img src="assets/images/logos/jd-sports-logo.png" alt="JD Sports" class="logo">
+    <img src="assets/images/logos/tissot-logo.png" alt="Tissot" class="logo">
+  </div>
+
+  <!-- Content 1 -->
+  <div class="home__content-1 wrapper">
+    <div class="left">
+      <h1 class="heading">Discover the Latest Trends and Unique Finds in Real-Time!</h1>
+      <p class="desc">Experience the thrill of shopping anywhere, everywhere. Our platform brings you a curated selection of products from top brands, allowing you to explore and find exactly what you're looking for, no matter where you are.</p>
+    </div>
+    <div class="right">
+      <img src="assets/images/woman-escalator.jpg" class="image">
+    </div>
+  </div>
+
+  <!-- Content 2 -->
+  <div class="home__content-2">
+    <h1 class="heading">Just for you</h1>
+
+    <div class="cards">
+      <div class="card" *ngFor="let item of [].constructor(3)">
+        <img class="image" src="assets/images/woman-escalator.jpg">
+
+        <div class="details">
+          <h4 class="price">RM 0.00</h4>
+          <h3 class="title">Name</h3>
+          <star-rating [starType]="'svg'" [labelPosition]="'right'" [labelText]="'(2.63)'" [rating]="2.63" [disabled]="true"></star-rating>
+          <button class="button-second">Buy now</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
